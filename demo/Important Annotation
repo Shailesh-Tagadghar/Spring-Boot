@@ -1,0 +1,4 @@
+#Important Annotations : 
+1.	@Component  :
+   - Class level annotation
+   - Bean will created by spring for this class 
