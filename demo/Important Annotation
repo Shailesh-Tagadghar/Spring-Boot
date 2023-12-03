@@ -2,6 +2,12 @@
 1.	@Component  :
    - Class level annotation
    - Bean will created by spring for this class 
+  Child Annotations of @Component :
+1.	@Controller
+2.	@RestController
+3.	@Service
+4.	@Repository
+
 
 2. @Autowired : field injection
    - It will use in Dependency Injection (DI)
