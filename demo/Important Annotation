@@ -19,5 +19,15 @@
 # Dependency Injection (DI).-Way to implement the IOC
 
 3.	@Bean and @Configuration
+Bean is required for In build classes
+  -method level annotation
+  - used on top of the methods which returns  the bean of some inbuild classes
+
+Whenever we use @Bean, we need to use @Configuration (class level annotation)
+
+@Configuration – THIS indicates to spring framework that there are some methods will returns the bean.
+
+Spring will execute all @Bean methods from @Configuration class and keeps the beans ready for injection
+
 4.	@ComponentScan
 5.	@SpringBootApplication
