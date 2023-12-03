@@ -2,3 +2,13 @@
 1.	@Component  :
    - Class level annotation
    - Bean will created by spring for this class 
+
+2. @Autowired : field injection
+   - It will use in Dependency Injection (DI)
+   -# Dependency -  depending on something 
+         Eg :  Car is depend on its engine if there is no engine car won’t work.
+   -# Injection :- Injecting something into class 
+         Eg : Serine injects medicine into our body.
+
+# Dependency Injection (DI).-Way to implement the IOC
+
