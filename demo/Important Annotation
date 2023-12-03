@@ -12,3 +12,6 @@
 
 # Dependency Injection (DI).-Way to implement the IOC
 
+3.	@Bean and @Configuration
+4.	@ComponentScan
+5.	@SpringBootApplication
