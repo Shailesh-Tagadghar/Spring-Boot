@@ -2,9 +2,13 @@ package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
-@Component  //create bin of particular class
+@Component //create bin of particular class
 public class Students {
 	public Students() {
 		System.out.println("Student Object is Created");
+	}
+	
+	public void study() {
+		System.out.println("We are Studying");
 	}
 }
