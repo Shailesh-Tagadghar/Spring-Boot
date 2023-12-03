@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Scanner;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +13,8 @@ public class BasicsApplication implements CommandLineRunner{
 	// 1. field injection
 	@Autowired
 	private Students students;
+	@Autowired
+	private Scanner scanner;
 	
 	// 2. Constructor injection 
 //	private Students students;
@@ -36,5 +40,9 @@ public class BasicsApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception{
 		students.study();
+		System.out.println("Plase Enter the Name : ");
+		String name = scanner.next();
+		System.out.println("Welcome "+name + " !");
 	}
+	
 }
