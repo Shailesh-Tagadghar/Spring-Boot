@@ -9,6 +9,8 @@
 3.	@Service :
             In this we write business logic
 4.	@Repository
+            To interact with database
+            it provides in-built method like ---- save, deleteById, FindById, FindAll();
 
 
 2. @Autowired : field injection
