@@ -40,6 +40,12 @@ Spring will execute all @Bean methods from @Configuration class and keeps the be
 
 To perform CRUD operation using Annotation:
 1. @GetMapping -- Use for fetching the data from database and its by Default by browser
+   Eg. 
+       @GetMapping("/home")
+	    public String index() {
+          return "Hello from Controller";
+       }
+
 2. @PostMapping -- use for uploading or insert the data into database
 3. @DeleteMapping -- use to delete data from database
 4. @PutMapping -- use to full update the present data of database ///full update -- eg: profile edit
