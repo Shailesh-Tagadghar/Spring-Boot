@@ -3,7 +3,8 @@
    - Class level annotation
    - Bean will created by spring for this class 
   Child Annotations of @Component :
-1.	@Controller
+1.	@Controller:
+            handling request and generating responses
 2.	@RestController :
             @RestController is combination of @Controller and @ResponseBody annotation.
 3.	@Service :
