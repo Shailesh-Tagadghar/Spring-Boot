@@ -38,6 +38,12 @@ Spring will execute all @Bean methods from @Configuration class and keeps the be
 4.	@ComponentScan
 5.	@SpringBootApplication
 
+To perform CRUD operation using Annotation:
+1. @GetMapping -- Use for fetching the data from database
+2. @PostMapping -- use for uploading the data to database
+3. @DeleteMapping -- use to delete data from database
+4. @PutMapping -- use to update the present data of database
+
 
 
 
