@@ -51,6 +51,7 @@ To perform CRUD operation using Annotation:
 4. @PutMapping -- use to full update the present data of database ///full update -- eg: profile edit
 5. @PatchMapping -- use to partial update the present data of database //partial update -- eg. only updating the password
 
-
-
+to update the port number:
+go to the src/main/recorces --> application.properties:
+ write --> server.port = port_number(8090)
 
