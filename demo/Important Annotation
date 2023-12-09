@@ -11,6 +11,7 @@
 4.	@Repository
             To interact with database
             it provides in-built method like ---- save, deleteById, FindById, FindAll();
+            basicaaly it uses in crud operation
 
 
 2. @Autowired : field injection
