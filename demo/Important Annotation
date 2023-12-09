@@ -59,6 +59,9 @@ to update the name of application:
 go to the src/main/recorces --> application.properties:
  write --> spring.application.name=FirstRestApp
 
+to fetch the data :
+@Value("${spring.application.name}") using @Value annotation
+
 to add new dependency into ongoing project file:
 1. click to project folder
 2. open spring tab
