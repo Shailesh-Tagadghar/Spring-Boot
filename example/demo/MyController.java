@@ -15,6 +15,5 @@ public class MyController {
 		System.out.println(appName);
 		return "Welcome from "+appName;
 	}
-
 	
 }
