@@ -31,3 +31,7 @@ Spring will execute all @Bean methods from @Configuration class and keeps the be
 
 4.	@ComponentScan
 5.	@SpringBootApplication
+
+
+
+@RestController is combination of @Controller and @ResponseBody annotation.
