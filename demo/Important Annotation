@@ -5,6 +5,7 @@
   Child Annotations of @Component :
 1.	@Controller
 2.	@RestController
+   @RestController is combination of @Controller and @ResponseBody annotation.
 3.	@Service
 4.	@Repository
 
@@ -34,4 +35,4 @@ Spring will execute all @Bean methods from @Configuration class and keeps the be
 
 
 
-@RestController is combination of @Controller and @ResponseBody annotation.
+
