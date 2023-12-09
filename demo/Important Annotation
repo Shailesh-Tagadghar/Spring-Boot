@@ -55,3 +55,12 @@ to update the port number:
 go to the src/main/recorces --> application.properties:
  write --> server.port = port_number(8090)
 
+to add new dependency into ongoing project file:
+1. click to project folder
+2. open spring tab
+3. click on add starters
+4. add which dependency you want to add
+5. shift code to right side
+6. and finish it 
+7. it will add the dependency
+8. to check click on pom.xml file
