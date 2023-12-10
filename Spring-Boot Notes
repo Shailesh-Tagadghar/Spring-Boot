@@ -107,6 +107,21 @@ steps :
    i.  create the map of employees
    ii. define the methods for performing the CRUD Operations using MAP
 
+3. steps to communication purpose: for @PostMapping
+  1. client sends data to application
+     eg :
+         {
+          "id":101,
+          "name":"abc",
+          "dept":"IT",
+          "salary":30000
+          } 
+ 2. Capture the data (object) sent by Client
+    eg :
+ 3. Call Service class method to save the employee object
+    eg :
+ 4. Controller sends response to client
+     eg :
 
 
 # sending request or data from postmon
