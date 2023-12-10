@@ -30,6 +30,7 @@ public class MyService {
 	//delete
 	public void deleteEmp(int id) {
 		allemployees.remove(id);
+		System.out.println(allemployees);
 	}
 
 	
