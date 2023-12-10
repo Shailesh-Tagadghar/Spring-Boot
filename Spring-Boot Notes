@@ -1,3 +1,81 @@
+#Important Annotations : 
+1.	@Component  :
+   - Class level annotation
+   - Bean will created by spring for this class 
+  Child Annotations of @Component :
+1.	@Controller:
+            handling request and generating responses
+2.	@RestController :
+            @RestController is combination of @Controller and @ResponseBody annotation.
+3.	@Service :
+            In this we write business logic
+4.	@Repository
+            To interact with database
+            it provides in-built method like ---- save, deleteById, FindById, FindAll();
+            basicaaly it uses in crud operation
+
+
+2. @Autowired : field injection
+   - It will use in Dependency Injection (DI)
+   -# Dependency -  depending on something 
+         Eg :  Car is depend on its engine if there is no engine car won’t work.
+   -# Injection :- Injecting something into class 
+         Eg : Serine injects medicine into our body.
+
+# Dependency Injection (DI).-Way to implement the IOC
+
+3.	@Bean and @Configuration
+Bean is required for In build classes
+  -method level annotation
+  - used on top of the methods which returns  the bean of some inbuild classes
+
+Whenever we use @Bean, we need to use @Configuration (class level annotation)
+
+@Configuration – THIS indicates to spring framework that there are some methods will returns the bean.
+
+Spring will execute all @Bean methods from @Configuration class and keeps the beans ready for injection
+
+4.	@ComponentScan
+5.	@SpringBootApplication
+
+To perform CRUD operation using Annotation:
+1. @GetMapping -- Use for fetching the data from database and its by Default by browser
+   Eg. 
+       @GetMapping("/home")
+	    public String index() {
+          return "Hello from Controller";
+       }
+
+2. @PostMapping -- use for uploading or insert the data into database
+3. @DeleteMapping -- use to delete data from database
+4. @PutMapping -- use to full update the present data of database ///full update -- eg: profile edit
+5. @PatchMapping -- use to partial update the present data of database //partial update -- eg. only updating the password
+
+to update the port number:
+go to the src/main/recorces --> application.properties:
+ write --> server.port = port_number(8090)
+
+to update the name of application:
+go to the src/main/recorces --> application.properties:
+ write --> spring.application.name=FirstRestApp
+
+to fetch the properties defined in properties file(application.properties) :
+@Value("${spring.application.name}") using @Value annotation
+
+to add new dependency into ongoing project file:
+1. click to project folder
+2. open spring tab
+3. click on add starters
+4. add which dependency you want to add
+5. shift code to right side
+6. and finish it 
+7. it will add the dependency
+8. to check click on pom.xml file
+
+############################################################################################
+
+# Starting Rest API :- 
+
 REST :- Representational state transfer
 SOAP :- Simple Objet Access Protocol
 API :- Application programming interface
