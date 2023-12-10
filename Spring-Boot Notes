@@ -96,7 +96,7 @@ eg:   public class Employee {
 4. select fields that you want 
 5. generate it.
 
-TO import  ===> ctrl+space+o;
+TO import  ===> ctrl+shift+o;
 
 steps :
 1. Resource
