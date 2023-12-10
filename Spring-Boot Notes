@@ -96,6 +96,9 @@ eg:   public class Employee {
 4. select fields that you want 
 5. generate it.
 
+#to generate toString():
+right click -> source -> generate toString() -> select fields
+
 TO import  ===> ctrl+shift+o;
 
 steps :
