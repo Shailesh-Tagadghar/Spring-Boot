@@ -53,5 +53,16 @@ public class MyController {
 		return "Employee deleted Successfully !";
 	}
 	
+	@GetMapping("/emplist")
+	public Iterable<Employee> getAllEmployees(){
+		Iterable<Employee> allEmp = myService.getAll();
+		return allEmp;
+	}
+	
+	@GetMapping("/getemp")
+	public Employee getById(@RequestParam("id") int id) {
+		Employee e = myService.getById(id);
+		return e;
+	}
 	
 }
