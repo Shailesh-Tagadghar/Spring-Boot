@@ -89,3 +89,9 @@ package com.example.demo;
 eg:   public class Employee {
       }
 
+#to generate getter and setter :-
+1. right click on code 
+2. go to source tab
+3. select generate getter and setter tab
+4. select fields that you want 
+5. generate it.
