@@ -120,11 +120,8 @@ steps :
           "salary":30000
           } 
  2. Capture the data (object) sent by Client
-    eg :
  3. Call Service class method to save the employee object
-    eg :
  4. Controller sends response to client
-     eg :
 
 
 # sending request or data from postmon
