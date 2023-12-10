@@ -106,3 +106,11 @@ steps :
 
    i.  create the map of employees
    ii. define the methods for performing the CRUD Operations using MAP
+
+
+
+# sending request or data from postmon
+1. open postmon
+2. select POST Method
+3. select raw and type - json
+4. input the data
