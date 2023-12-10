@@ -112,5 +112,5 @@ steps :
 # sending request or data from postmon
 1. open postmon
 2. select POST Method
-3. select raw and type - json
+3. select BODY, raw and type - json
 4. input the data
