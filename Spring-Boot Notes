@@ -80,3 +80,12 @@ REST :- Representational state transfer
 SOAP :- Simple Objet Access Protocol
 API :- Application programming interface
 POJO :- Plain Old Java Object
+
+
+#Resource:
+package com.example.demo;
+
+#this is example of resource : Employee is resource
+eg:   public class Employee {
+      }
+
