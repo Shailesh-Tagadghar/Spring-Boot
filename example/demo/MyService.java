@@ -32,6 +32,17 @@ public class MyService {
 		allemployees.remove(id);
 		System.out.println(allemployees);
 	}
+	
+	//get
+	public Iterable<Employee> getAll(){
+		return allemployees.values();
+	}
+	
+	//get by id 
+	public Employee getById(int id) {
+		return allemployees.get(id);
+	}
+	
 
 	
 }
