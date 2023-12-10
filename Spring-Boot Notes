@@ -95,3 +95,14 @@ eg:   public class Employee {
 3. select generate getter and setter tab
 4. select fields that you want 
 5. generate it.
+
+TO import  ===> ctrl+space+o;
+
+steps :
+1. Resource
+2. Map:
+   a. To store a data
+   b. Within the service class
+
+   i.  create the map of employees
+   ii. define the methods for performing the CRUD Operations using MAP
