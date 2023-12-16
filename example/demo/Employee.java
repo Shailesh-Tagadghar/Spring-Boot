@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -25,6 +26,16 @@ public class Employee {
 	@Size(min=10, max=10, message="Num must be 10 no. long")
 	private String mobile;
 	
+	@NotNull
+	@Email @ItvEmail
+	private String Email;
+	
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
+	}
 	public String getMobile() {
 		return mobile;
 	}
@@ -58,7 +69,8 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + ", mobile=" + mobile + "]";
+		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + ", mobile=" + mobile
+				+ ", Email=" + Email + "]";
 	}
 	
 	
