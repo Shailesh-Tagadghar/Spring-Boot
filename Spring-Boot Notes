@@ -129,3 +129,11 @@ steps :
 2. select POST Method
 3. select BODY, raw and type - json
 4. insert the data
+
+
+
+#######################################
+
+requestParameter :- localhost:8090/emp?id=101
+
+variable_path :- localhost:8090/emp/101
