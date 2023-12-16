@@ -137,3 +137,23 @@ steps :
 requestParameter :- localhost:8090/emp?id=101
 
 variable_path :- localhost:8090/emp/101
+
+
+Steps to create Custom Annotator:
+1. create class ItvEmailValidator
+2. add interfaces ==> jakarta.validation.ConstraintValidator<A, T> ==> this one
+3. write logic in it ==>
+    public class ItvEmailValidator implements ConstraintValidator<ItvEmail, String> {
+    //A = ItvEmail is annotator name
+    //T = String
+}
+4. create interface ItvEmail
+5. ==> package com.example.demo;
+
+public interface ItvEmail {
+ //then add @ to interface
+}
+
+public @interface ItvEmail {
+
+}
