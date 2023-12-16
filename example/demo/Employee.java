@@ -1,8 +1,17 @@
 package com.example.demo;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 public class Employee {
+	@NotNull 
 	private int id;
-	private String name,dept;
+	@NotNull @NotEmpty
+	private String name;
+	@NotNull @NotEmpty
+	private String dept;
+	@Min(value = 10000)
 	private int salary;
 	
 	public int getId() {
