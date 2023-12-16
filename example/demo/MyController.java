@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.validation.Valid;
 
 @RestController
 public class MyController {
@@ -33,7 +36,7 @@ public class MyController {
 	}
 
 	@PostMapping("/addemp")
-	public String addEmployee(@RequestBody Employee employee) {
+	public String addEmployee(@RequestBody @Valid Employee employee) {
 //		System.out.println(employee);
 		myService.addEmp(employee);
 		
@@ -59,10 +62,20 @@ public class MyController {
 		return allEmp;
 	}
 	
-	@GetMapping("/getemp")
-	public Employee getById(@RequestParam("id") int id) {
-		Employee e = myService.getById(id);
+	//localhost:8090/getemp?id=105
+//	@GetMapping("/getemp")
+//	public Employee getById(@RequestParam("id") int id) {
+//		Employee e = myService.getById(id);
+//		return e;
+//	}
+	
+	//localhost:8090/getemp/105
+	@GetMapping("/getemp/{id}")
+	public Employee getbyId(@PathVariable int id) {
+		Employee e  = myService.getById(id);
 		return e;
 	}
+	
+	
 	
 }
