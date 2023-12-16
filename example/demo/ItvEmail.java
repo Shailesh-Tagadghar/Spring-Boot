@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 //1. Validation logic implemented by class
 @Constraint(validatedBy = ItvEmailValidator.class)
@@ -17,5 +18,9 @@ import jakarta.validation.Constraint;
 @Retention(RetentionPolicy.RUNTIME)
 
 public @interface ItvEmail {
-
+	
+	String message() default "Invalid Itvedant Email";
+	Class<?>[] groups() default {};
+	Class<? extends Payload>[] payload() default {};
+	
 }
