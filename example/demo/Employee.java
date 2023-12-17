@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+@PassMatchValid(field= "password",matchingField="confirmpassword")
 public class Employee {
 	@NotNull 
 	private int id;
@@ -30,6 +31,26 @@ public class Employee {
 	@Email @ItvEmail
 	private String Email;
 	
+	@NotNull
+	@Pattern(regexp = "[a-zA-Z@0-9]*")
+	@Size(min=8, max=15)
+	private String password;
+	
+	@NotNull
+	private String confirmpassword;
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getConfirmpassword() {
+		return confirmpassword;
+	}
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
+	}
 	public String getEmail() {
 		return Email;
 	}
@@ -70,7 +91,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", salary=" + salary + ", mobile=" + mobile
-				+ ", Email=" + Email + "]";
+				+ ", Email=" + Email + ", password=" + password + ", confirmpassword=" + confirmpassword + "]";
 	}
 	
 	
