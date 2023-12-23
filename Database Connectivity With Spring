@@ -58,3 +58,8 @@ put ===> users/_id_ {}--json object
 FLOW of rest api :
 
 RestController --> Service --> Respository --> Database
+
+eg :
+
+@GetMapping("/users")
+--->Controller --> service (service.getAll()) --> Repository (findAll()) --> Iterable<user> --> Iterable<user> --> Client
