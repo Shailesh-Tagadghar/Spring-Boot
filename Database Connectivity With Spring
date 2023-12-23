@@ -39,3 +39,13 @@ add dependency :
 4. jpa.data
 
 
+REST API Stucture:
+
+Endpoint :
+Resource : User
+
+getAll ===> user/
+getbyId ===> user/_id_
+post ====> user/_id_ and {}--json object
+deletebyId ==> user/_id_
+put ===> user/_id_ {}--json object
