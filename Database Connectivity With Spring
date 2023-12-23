@@ -53,3 +53,8 @@ getbyId ===> users/_id_
 post ====> users/_id_ and {}--json object
 deletebyId ==> users/_id_
 put ===> users/_id_ {}--json object
+
+
+FLOW of rest api :
+
+RestController --> Service --> Respository --> Database
