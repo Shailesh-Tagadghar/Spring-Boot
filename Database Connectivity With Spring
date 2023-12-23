@@ -45,7 +45,7 @@ add dependency :
 
 REST API Stucture:
 
-Endpoint :
+Endpoint : Where we send a request  =====> localhost:8080/user/_id_
 Resource : User
 
 getAll ===> user/
