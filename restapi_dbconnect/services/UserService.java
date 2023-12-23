@@ -20,5 +20,12 @@ public class UserService {
 		Iterable<User> allUsers = userRepository.findAll();
 		return allUsers;
 	}
+
+	public User getById(int id) {
+		User user = userRepository.findById(id)
+				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Id"));
+		return user;
+	}
+	
 	
 }
