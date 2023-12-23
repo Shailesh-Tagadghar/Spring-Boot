@@ -45,11 +45,11 @@ add dependency :
 
 REST API Stucture:
 
-Endpoint : Where we send a request  =====> localhost:8080/user/_id_
-Resource : User
+Endpoint : Where client send a request  =====> localhost:8080/users/_id_
+Resource : users
 
-getAll ===> user/
-getbyId ===> user/_id_
-post ====> user/_id_ and {}--json object
-deletebyId ==> user/_id_
-put ===> user/_id_ {}--json object
+getAll ===> users/
+getbyId ===> users/_id_
+post ====> users/_id_ and {}--json object
+deletebyId ==> users/_id_
+put ===> users/_id_ {}--json object
