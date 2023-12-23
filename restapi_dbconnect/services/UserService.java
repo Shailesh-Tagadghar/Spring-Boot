@@ -26,6 +26,10 @@ public class UserService {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Id"));
 		return user;
 	}
+
+	public void deleteUser(int id) {
+		userRepository.deleteById(id);
+	}
 	
 	
 }
