@@ -7,3 +7,4 @@ import com.example.demo.models.Employee;
 public interface EmployeeReository extends CrudRepository<Employee, Integer> {
 
 }
+//this file is for to connect with or interact with database, table
