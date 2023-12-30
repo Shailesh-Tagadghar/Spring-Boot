@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Employee {
-	// this models we use for create database and its schema and table, fields like that.
+	// this models folder/file we use for create database and its schema and table, fields like that.
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
