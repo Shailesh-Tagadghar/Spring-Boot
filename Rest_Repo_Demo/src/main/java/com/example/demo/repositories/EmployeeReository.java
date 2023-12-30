@@ -4,6 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.models.Employee;
 
+
+@RepositoryRestResource(excerptProjection = EmployeeProjection.class)
 public interface EmployeeReository extends CrudRepository<Employee, Integer> {
 
 }
