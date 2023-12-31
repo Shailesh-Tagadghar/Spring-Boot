@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Address {
@@ -14,9 +16,20 @@ public class Address {
 	private String city, state;
 	
 	private String pincode;
+	
+	@OneToOne(mappedBy = "address")
+	private Employees employees;
 
 	public int getId() {
 		return id;
+	}
+
+	public Employees getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(Employees employees) {
+		this.employees = employees;
 	}
 
 	public void setId(int id) {
