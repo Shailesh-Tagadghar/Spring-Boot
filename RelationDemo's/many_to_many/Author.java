@@ -39,6 +39,4 @@ public class Author {
 	public void setQuali(String quali) {
 		this.quali = quali;
 	}
-	
-	
 }
