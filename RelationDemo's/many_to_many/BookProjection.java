@@ -11,4 +11,4 @@ public interface BookProjection {
 	int getPrice();
 }
 
-//http://localhost:8080/books/1?projection=bookProjection //---to get the single details in Postman using like this
+//http://localhost:8080/books/1?projection=bookProjection //---to get the single details in Postman using like this //to get details by ID();
