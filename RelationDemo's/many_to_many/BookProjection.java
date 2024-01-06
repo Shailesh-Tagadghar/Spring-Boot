@@ -10,3 +10,5 @@ public interface BookProjection {
 	List<Author> getAuthors();
 	int getPrice();
 }
+
+//http://localhost:8080/books/1?projection=bookProjection //---to get the single details in Postman using like this
