@@ -15,6 +15,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Integer
 	// PagingAndSortingRepository :-
 	// to perform paging and sorting operation
 	// default has findAll() method
+	// it only supports -- findAll() method
 	// we can create custom method as well into this
 	
 	// save, deleteById, findById this methods also has 
