@@ -22,3 +22,36 @@ public interface UserRepository extends PagingAndSortingRepository<User, Integer
 	
 	
 }
+
+
+// by using this link you can set size of pages that you want to check
+// http://localhost:8080/users?size=2
+// this will provid eyou this para in this end of postman
+//     "page": {
+//       "size": 2,
+//       "totalElements": 6,
+//        "totalPages": 3,
+//        "number": 0
+//    }
+
+// it will also provide you the links to visit next and last pages
+'''
+"_links": {
+        "first": {
+            "href": "http://localhost:8080/users?page=0&size=2"
+        },
+        "self": {
+            "href": "http://localhost:8080/users?page=0&size=2"
+        },
+        "next": {
+            "href": "http://localhost:8080/users?page=1&size=2"
+        },
+        "last": {
+            "href": "http://localhost:8080/users?page=2&size=2"
+        },
+        "profile": {
+            "href": "http://localhost:8080/profile/users"
+        }
+    } 
+'''
+//like this
