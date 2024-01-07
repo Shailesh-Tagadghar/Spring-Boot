@@ -41,3 +41,5 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 //to search by AND logical operator :- http://localhost:8080/users/search/findByEmailAndPassword?email=sat@gmail.com&&password=sat@123
 //to search by Like Operator % :- http://localhost:8080/users/search/findByNameContaining?name=at
 //to search by Order By Operator % :- http://localhost:8080/users/search/findAllByOrderByNameAsc
+//or 
+//                        http://localhost:8080/users/search/asc-name
