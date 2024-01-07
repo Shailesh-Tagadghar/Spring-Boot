@@ -20,7 +20,11 @@ public interface UserRepository extends PagingAndSortingRepository<User, Integer
 	// only GET operations will work here 
 	// POST, DELETE, PUT operation are not allowed
 	
-	// save, deleteById, findById this methods also has 
+	//Custom Method to perform CRUD operation
+	// save, deleteById, findById this methods -- we use in PagingAndSortingRepository
+	
+	// to insert and save records
+	public User save(User save); 
 	
 	
 }
