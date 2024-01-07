@@ -30,6 +30,8 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 	public Iterable<User> findByNameContaining(String name);
 
 	//Order By Ascending
+	@RestResource(path = "asc-name") 
+	// to set custom link name //we don't have to write the whole -- findAllByOrderByNameAsc();
 	public Iterable<User> findAllByOrderByNameAsc();
 	
 }
