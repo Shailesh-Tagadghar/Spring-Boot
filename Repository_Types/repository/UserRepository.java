@@ -55,3 +55,10 @@ public interface UserRepository extends PagingAndSortingRepository<User, Integer
     } 
 '''
 //like this
+
+
+// to sort the records by asec order
+// http://localhost:8080/users?sort=name
+
+// to sort the records by desc order
+// http://localhost:8080/users?sort=name,desc
