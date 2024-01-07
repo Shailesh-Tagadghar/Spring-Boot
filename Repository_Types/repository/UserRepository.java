@@ -62,3 +62,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Integer
 
 // to sort the records by desc order
 // http://localhost:8080/users?sort=name,desc
+
+// we can sort by any fields using and or operator
+// http://localhost:8080/users?size=1&sort=name,desc
+// http://localhost:8080/users?page=5&size=1&sort=name,desc
