@@ -2,6 +2,7 @@ package com.example.SecurityDemo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -23,7 +24,19 @@ public class SecurityConfiguration {
 		return http.build();
 	}
 	
-	// 2. All Private url's
+	// 2. All Private url's -- by using this method we have to use custom username and password that we created in resource file
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		http.csrf(csrf->csrf.disable())
+		.authorizeHttpRequests(auth -> {
+			auth.anyRequest().authenticated();
+		}).httpBasic(Customizer.withDefaults());
+		
+		
+		return http.build();
+	}
+	
 	// 3. Some Public and Private url's (Partial Url's)
 	// 4. In Memory User
 	
