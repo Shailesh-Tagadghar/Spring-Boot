@@ -17,7 +17,7 @@ public class SecurityConfiguration {
 		
 		http.csrf(csrf->csrf.disable())
 		.authorizeHttpRequests(auth -> {
-			auth.anyRequest().permitAll();
+			auth.anyRequest().permitAll();  
 		});
 		
 		
@@ -31,7 +31,7 @@ public class SecurityConfiguration {
 		http.csrf(csrf->csrf.disable())
 		.authorizeHttpRequests(auth -> {
 			auth.anyRequest().authenticated();
-		}).httpBasic(Customizer.withDefaults());
+		}).httpBasic(Customizer.withDefaults()); # for basic auth in postman
 		
 		
 		return http.build();
