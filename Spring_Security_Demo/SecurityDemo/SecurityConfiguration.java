@@ -67,5 +67,24 @@ public class SecurityConfiguration {
 		}).httpBasic(Customizer.withDefaults());
 		return http.build();
 	}
+
+	//b. In memory use -- to create custom user and password to access
+	@Bean
+	public UserDetailsService detailsService() {
+		
+		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+		
+		UserDetails user1 = User.withUsername("user1")
+				.password(encoder.encode("user1"))
+				.roles("USER")
+				.build();
+		
+		UserDetails user2 = User.withUsername("admin1")
+				.password(encoder.encode("admin1"))
+				.roles("ADMIN")
+				.build();
+		
+		return new InMemoryUserDetailsManager(user1,user2);
+	}
 	
 }
