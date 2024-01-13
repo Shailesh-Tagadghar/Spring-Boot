@@ -31,7 +31,7 @@ public class SecurityConfiguration {
 		http.csrf(csrf->csrf.disable())
 		.authorizeHttpRequests(auth -> {
 			auth.anyRequest().authenticated();
-		}).httpBasic(Customizer.withDefaults()); # for basic auth in postman
+		}).httpBasic(Customizer.withDefaults()); // for basic auth in postman
 		
 		
 		return http.build();
@@ -54,5 +54,18 @@ public class SecurityConfiguration {
 	}
 	
 	// 4. In Memory User
+	// a. Role Based access -- Some Public and Private url's 
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		http.csrf(csrf->csrf.disable())
+		.authorizeHttpRequests(auth -> {
+			auth.requestMatchers(HttpMethod.GET,"/users").hasRole("ADMIN")
+			    .requestMatchers(HttpMethod.GET,"/users/**").hasRole("USER")
+			    .requestMatchers(HttpMethod.PUT,"/users/**").hasRole("USER")
+			    .anyRequest().permitAll();
+		}).httpBasic(Customizer.withDefaults());
+		return http.build();
+	}
 	
 }
