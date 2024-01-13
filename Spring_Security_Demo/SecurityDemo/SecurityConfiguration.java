@@ -38,6 +38,21 @@ public class SecurityConfiguration {
 	}
 	
 	// 3. Some Public and Private url's (Partial Url's)
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		
+		http.csrf(csrf->csrf.disable())
+		.authorizeHttpRequests(auth -> {
+			auth.requestMatchers(HttpMethod.GET,"/users").authenticated()
+			    .requestMatchers(HttpMethod.GET,"/users/**").authenticated()
+			    .requestMatchers(HttpMethod.PUT,"/users/**").authenticated()
+			    .anyRequest().permitAll();
+		}).httpBasic(Customizer.withDefaults());
+		
+		
+		return http.build();
+	}
+	
 	// 4. In Memory User
 	
 }
