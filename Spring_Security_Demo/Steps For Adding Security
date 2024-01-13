@@ -1,0 +1,21 @@
+1. Create new spring project
+2. Add dependencies:
+   Spring web
+   Security
+   Mysql Driver
+   Rest Repository
+   JPA
+
+3. Create User class and UserRepository interface
+4. Define code into this
+5. Add some records using POSTMAN
+6. Check all user is visible in postman using get method
+7. Now add Security Dependency into project
+8. Restart Project
+9. We will get Security key ---- (ca8fdb43-f601-4514-9fe9-7d53786f7524)  like this
+   >>>>To store password ---- use this code into resource --- application.properties file
+     spring.security.user.name=shailesh
+     spring.security.user.password=shailesh1
+
+10. go to postman --- authorazition --- type -- basic auth -- define username and password
+11. then check for records
