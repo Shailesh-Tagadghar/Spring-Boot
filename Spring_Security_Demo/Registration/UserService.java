@@ -31,7 +31,7 @@ public class UserService {
 		user.setEmail(userdto.getEmail());
 		//password must be encrypted
 		user.setPassword(encoder.encode(userdto.getPassword()));
-
+		
 		//to give role based access to the user
 		if(userdto.getRoles()==null)
 			user.setRoles(Arrays.asList("ROLE_USER"));
@@ -41,4 +41,5 @@ public class UserService {
 		userRepository.save(user);
 		
 	}
+
 }
