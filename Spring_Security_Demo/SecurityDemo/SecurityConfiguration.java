@@ -95,6 +95,7 @@ public class SecurityConfiguration {
 	}
 
 	@Bean
+	//To add encryption to the password
 	public PasswordEncoder encoder() {
 		return new BCryptPasswordEncoder();
 	}
