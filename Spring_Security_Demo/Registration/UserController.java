@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.SecurityDemo.Models.UserDTO;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -23,6 +22,5 @@ public class UserController {
 	public ResponseEntity<?> register(@RequestBody @Valid UserDTO userdto){
 		userService.registerUser(userdto);
 		return new ResponseEntity<>("Registerd Successfully !!",HttpStatus.CREATED);
-	}
-	
+	}	
 }
