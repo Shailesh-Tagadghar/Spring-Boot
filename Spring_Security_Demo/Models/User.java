@@ -1,6 +1,9 @@
 package com.example.SecurityDemo.Models;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,6 +22,20 @@ public class User {
 	private String email;
 	
 	private String password;
+	
+	@ElementCollection 
+	// sets : 1 to many relationship between User and User_Roles tables
+    //it will add 1 more table to the database user_roles -- user_id (FK), user_roles --fields of this table
+	private List<String> roles;
+	
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
 
 	public int getId() {
 		return id;
