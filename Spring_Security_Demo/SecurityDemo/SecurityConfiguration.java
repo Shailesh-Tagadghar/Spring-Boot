@@ -1,9 +1,11 @@
 package com.example.SecurityDemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -79,22 +81,29 @@ public class SecurityConfiguration {
 	}
 	
 	//b. In memory use -- to create custom user and password to access
-	@Bean
-	public UserDetailsService detailsService() {
-		
-		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		
-		UserDetails user1 = User.withUsername("user1")
-				.password(encoder.encode("user1"))
-				.roles("USER")
-				.build();
-		
-		UserDetails user2 = User.withUsername("admin1")
-				.password(encoder.encode("admin1"))
-				.roles("ADMIN")
-				.build();
-		
-		return new InMemoryUserDetailsManager(user1,user2);
+//	@Bean
+//	public UserDetailsService detailsService() {
+//		
+//		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//		
+//		UserDetails user1 = User.withUsername("user1")
+//				.password(encoder.encode("user1"))
+//				.roles("USER")
+//				.build();
+//		
+//		UserDetails user2 = User.withUsername("admin1")
+//				.password(encoder.encode("admin1"))
+//				.roles("ADMIN")
+//				.build();
+//		
+//		return new InMemoryUserDetailsManager(user1,user2);
+//	}
+	
+	@Autowired
+	private MyUserDetailsService myUserDetailsService;
+	
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(myUserDetailsService);
 	}
 	
 	@Bean
