@@ -93,5 +93,10 @@ public class SecurityConfiguration {
 		
 		return new InMemoryUserDetailsManager(user1,user2);
 	}
+
+	@Bean
+	public PasswordEncoder encoder() {
+		return new BCryptPasswordEncoder();
+	}
 	
 }
