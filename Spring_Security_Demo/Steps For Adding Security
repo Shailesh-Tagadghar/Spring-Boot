@@ -20,11 +20,15 @@
 
 10. go to postman --- authorazition --- type -- basic auth -- define username and password
 11. then check for records
-12. after that we will create SecurityConf.java file for writing configuration code for accessing the Url's (line public and private and role based as well)
-13. then we will create In model folder - UserDTO.java file -- to define jakarta.validation.constraints.Email like this -- in this file we will define only validation annotation @NotNull @Pattern
-14. we have to do some changes in User.java file as well -- in this file we have define only jakarta.persistence.Column like this -- @Entity @Id
+12. after that we will create SecurityConf.java file for writing configuration code for accessing the Url's 
+    (like public and private and role based as well)
+13. then we will create In model folder - UserDTO.java file -- this file is for accepting and validating user input
+    -- to define jakarta.validation.constraints.Email like this 
+    -- in this file we will define only validation annotation @NotNull @Pattern
+14. we have to do some changes in User.java file as well 
+    -- in this file we have define only jakarta.persistence.Column like this -- @Entity @Id
 15. and we have do some changes in UserRepository.java file -- 
-   @RestResource(exported = false)
+        @RestResource(exported = false)
 	public User save(User user);
    we have to add this code into this file.... to save this data
-16
+16.
