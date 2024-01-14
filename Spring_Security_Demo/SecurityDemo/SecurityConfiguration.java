@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -19,48 +20,48 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfiguration {
 	
 	// 1. All Public url's
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		
-		http.csrf(csrf->csrf.disable())
-		.authorizeHttpRequests(auth -> {
-			auth.anyRequest().permitAll();  
-		});
-		
-		
-		return http.build();
-	}
+//	@Bean
+//	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//		
+//		http.csrf(csrf->csrf.disable())
+//		.authorizeHttpRequests(auth -> {
+//			auth.anyRequest().permitAll();
+//		});
+//		
+//		
+//		return http.build();
+//	}
 	
 	// 2. All Private url's -- by using this method we have to use custom username and password that we created in resource file
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		
-		http.csrf(csrf->csrf.disable())
-		.authorizeHttpRequests(auth -> {
-			auth.anyRequest().authenticated();
-		}).httpBasic(Customizer.withDefaults()); // for basic auth in postman
-		
-		
-		return http.build();
-	}
+//	@Bean
+//	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//		
+//		http.csrf(csrf->csrf.disable())
+//		.authorizeHttpRequests(auth -> {
+//			auth.anyRequest().authenticated();
+//		}).httpBasic(Customizer.withDefaults());
+//		
+//		
+//		return http.build();
+//	}
 	
 	// 3. Some Public and Private url's (Partial Url's)
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		
-		http.csrf(csrf->csrf.disable())
-		.authorizeHttpRequests(auth -> {
-			auth.requestMatchers(HttpMethod.GET,"/users").authenticated()
-			    .requestMatchers(HttpMethod.GET,"/users/**").authenticated()
-			    .requestMatchers(HttpMethod.PUT,"/users/**").authenticated()
-			    .anyRequest().permitAll();
-		}).httpBasic(Customizer.withDefaults());
-		
-		
-		return http.build();
-	}
+//	@Bean
+//	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//		
+//		http.csrf(csrf->csrf.disable())
+//		.authorizeHttpRequests(auth -> {
+//			auth.requestMatchers(HttpMethod.GET,"/users").authenticated()
+//			    .requestMatchers(HttpMethod.GET,"/users/**").authenticated()
+//			    .requestMatchers(HttpMethod.PUT,"/users/**").authenticated()
+//			    .anyRequest().permitAll();
+//		}).httpBasic(Customizer.withDefaults());
+//		
+//		
+//		return http.build();
+//	}
 	
-	// 4. In Memory User
+	// 4. In Memory Use 
 	// a. Role Based access -- Some Public and Private url's 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -72,9 +73,11 @@ public class SecurityConfiguration {
 			    .requestMatchers(HttpMethod.PUT,"/users/**").hasRole("USER")
 			    .anyRequest().permitAll();
 		}).httpBasic(Customizer.withDefaults());
+		
+		
 		return http.build();
 	}
-
+	
 	//b. In memory use -- to create custom user and password to access
 	@Bean
 	public UserDetailsService detailsService() {
@@ -93,9 +96,8 @@ public class SecurityConfiguration {
 		
 		return new InMemoryUserDetailsManager(user1,user2);
 	}
-
+	
 	@Bean
-	//To add encryption to the password
 	public PasswordEncoder encoder() {
 		return new BCryptPasswordEncoder();
 	}
