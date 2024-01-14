@@ -5,6 +5,7 @@
    Mysql Driver
    Rest Repository
    JPA
+   Validation -- this dependency we will add DTO (Data Trasfer Object) while this process -- using this valiadation -- we can define schema of table
 
 3. Create User class and UserRepository interface
 4. Define code into this
