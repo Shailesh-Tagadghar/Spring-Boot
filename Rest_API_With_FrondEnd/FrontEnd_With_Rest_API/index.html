@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management</title>
     <link rel="stylesheet" href="/index.css">
+    <script>
+        function fetchdata(){
+            fetch('http://localhost:8090/employees')
+            .then(resp => resp.json())
+            // .then(data => alert(data))
+            .then(data => alert(JSON.stringify(data)))
+            .catch(err => alert(err));
+        }
+    </script>
 </head>
 
 <body>
@@ -14,8 +23,8 @@
         <h3>A complete Support for managing data</h3>
     </header>
 
-    <table align="Center" border="2">
-        <tr>
+    <table align="Center" border="2" cellpadding="5" cellspacing="2">
+        <tr class="head">
             <th>Id</th>
             <th>Name</th>
             <th>Department</th>
