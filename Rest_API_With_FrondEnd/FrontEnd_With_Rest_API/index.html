@@ -7,31 +7,93 @@
     <title>Employee Management</title>
     <link rel="stylesheet" href="/index.css">
     <script>
-        function fetchdata(){
+        function fetchdata() {
             fetch('http://localhost:8090/employees')
-            .then(resp => resp.json())
-            // .then(data => alert(data))
-            .then(data => alert(JSON.stringify(data)))
-            .catch(err => alert(err));
+                .then(resp => resp.json())
+                // .then(data => alert(data))
+                // .then(data => alert(JSON.stringify(data)))
+                // .then(data => parsedata(data))
+                // .catch(err => alert(err));
+                .then(data => {
+                    let dataString = JSON.stringify(data);
+                    parsedata(dataString);
+                });
         }
+
+        function parsedata(dataString) {
+            // let dataString = JSON.stringify(data);
+            alert("Received Data : \n" + dataString);
+            let dataJSON = JSON.parse(dataString);
+            // console.table(dataJSON);
+            let employees = dataJSON['_embedded']['employees'];
+            console.table(employees);
+            // document.getElementById("empbody").innerHTML = employees;
+            // document.getElementById("content").innerHTML = employees;
+
+
+            let tablebody = document.getElementById("empbody");
+            let para = document.getElementById("content");
+
+            for (emp of employees) {
+                let h = document.createElement("h3");
+                let name = emp['name'];
+                let d = emp['dept'];
+                let s = emp['salary'];
+                let data = "Employees details : " + name + " is working in " + d + " department and he/she's earning " + s + " .";
+                h.innerHTML = data;
+                para.append(h);
+
+
+            let row = document.createElement("tr")
+            let col1 = document.createElement("td");
+            col1.innerHTML = emp['id'];
+
+            let col2 = document.createElement("td");
+            col2.innerHTML = emp['name'];
+
+            let col3 = document.createElement("td");
+            col3.innerHTML = emp['dept'];
+
+            let col4 = document.createElement("td");
+            col4.innerHTML = emp['salary'];
+
+            row.append(col1);
+            row.append(col2);
+            row.append(col3);
+            row.append(col4);
+
+            // tablebody.append(row)
+            tablebody.append(row)
+        }
+    }
     </script>
 </head>
 
-<body>
+<body onload="fetchdata()">
     <header>
         <h1>Employee Management</h1>
         <h3>A complete Support for managing data</h3>
     </header>
 
-    <table align="Center" border="2" cellpadding="5" cellspacing="2">
-        <tr class="head">
-            <th>Id</th>
-            <th>Name</th>
-            <th>Department</th>
-            <th>Salary</th>
-        </tr>
+    <p id="content"></p>
+
+    <table align="Center" border="2px" cellpadding="5" cellspacing="2">
+        <thead class="head">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
 
         <tbody id="empbody">
+            <!-- <tr>
+                <td>{employees.id}</td>
+                <td>{employees.name}</td>
+                <td>{employees.dept}</td>
+                <td>{employees.salary}</td>
+            </tr> -->
         </tbody>
     </table>
 
