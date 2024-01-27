@@ -1,5 +1,6 @@
 package com.example.demo;
 
+//import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class UnitTestingProjectApplicationTests {
 
 	@Test
+	//@Disabled //to disabled specific test case
 	void contextLoads() {
 		System.out.println("It says all clear go for development !!");
 	}
