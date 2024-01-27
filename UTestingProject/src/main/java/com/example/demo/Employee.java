@@ -12,10 +12,15 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@NotNull
+	@Size(max = 30)
 	private String name;
 	
+	@NotNull
+	@Size(max = 30)
 	private String dept;
 	
+	@Min(value = 10000)
 	private int salary;
 
 	public int getId() {
