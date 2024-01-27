@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 public class CalculatorTest {
 	
 private Calculator c = new Calculator();
+
+   //test case	
 	
     @Test
 	public void testAddNum() {
