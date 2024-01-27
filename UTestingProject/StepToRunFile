@@ -1,0 +1,5 @@
+to run testing file
+
+1. write code into src/test/...
+2. to run right click on projectName or select single file that you want test
+3. Run As tab --> JUnit Test
