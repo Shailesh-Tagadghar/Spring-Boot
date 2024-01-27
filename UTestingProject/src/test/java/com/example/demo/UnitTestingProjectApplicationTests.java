@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
+//@Disabled // it is class level as well
 class UnitTestingProjectApplicationTests {
 
 	@Test
