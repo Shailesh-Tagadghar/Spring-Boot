@@ -15,10 +15,12 @@ public class EmployeeTest {
 	@Test
 	public void addEmployeeTest() {
 		Employee e = new Employee();
-//		e.setName("Amit");
-//		e.setDept("IT");
-//		e.setSalary(8000);
-		
+	     // this test case will be failed due to salary>=10000
+	     //	e.setName("Amit");
+	     //	e.setDept("IT");
+	     // e.setSalary(8000);
+
+		//this test case will pass 
 		e.setName("Shailesh");
 		e.setDept("CS");
 		e.setSalary(12000);
